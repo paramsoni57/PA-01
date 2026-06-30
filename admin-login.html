@@ -1,0 +1,588 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <script>
+      if (window.location.protocol === "file:") {
+        window.location.replace("http://127.0.0.1:4173/admin-login.html?from=file");
+      }
+    </script>
+    <title>Admin Dashboard | Param Automation</title>
+    <meta
+      name="description"
+      content="Param Automation admin dashboard for managing starter products."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  <link rel="stylesheet" href="styles.css?v=20260701-01" />
+  </head>
+  <body class="admin-is-login">
+    <script>
+      if (localStorage.getItem("paramAutomationAdminSession") === "active") {
+        document.body.className = "admin-is-dashboard";
+      }
+    </script>
+    <span id="top" class="page-top" aria-hidden="true"></span>
+    <div class="topbar">
+      <div class="container topbar__inner">
+        <a class="topbar__admin-link active" href="admin-login.html?fresh=admin">Admin Dashboard</a>
+        <div class="topbar__links">
+          <a href="https://www.facebook.com/share/18fMQMRASi/" target="_blank" rel="noopener" aria-label="Facebook">f</a>
+          <a href="https://www.instagram.com/param_automation?igsh=MjFqNWtpcG8yeGMz" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+          <a class="call-icon" href="tel:+918109521547" aria-label="Call Param Automation" title="Call Param Automation">&#9742;</a>
+        </div>
+      </div>
+    </div>
+
+    <header class="site-header">
+      <div class="container nav">
+        <a class="brand" href="index.html#top" aria-label="Param Automation home">
+          <img src="assets/brand/logo.jpg" alt="Param Automation" />
+        </a>
+        <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="nav-menu" aria-label="Primary navigation">
+          <a href="index.html#top">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="digital-motor-starters.html">Products</a>
+          <a class="active" href="admin-login.html?fresh=admin">Admin</a>
+          <a href="index.html#generate-bill">Generate Bill</a>
+          <a href="contact.html">Contact Us</a>
+          <button class="quote-btn" type="button" data-admin-logout hidden onclick="window.adminLogoutFallback?.(event)">Logout</button>
+        </nav>
+      </div>
+    </header>
+
+    <main class="admin-page">
+      <section class="admin-login-panel" data-login-panel>
+        <form class="admin-login" action="javascript:void(0)" method="post" data-admin-login-form>
+          <p class="eyebrow">Secure Access</p>
+          <h1>Admin Login</h1>
+          <p>Login to add, edit, and remove products from the existing starter list.</p>
+          <label>
+            Username
+            <input type="text" name="username" autocomplete="off" required />
+          </label>
+          <label>
+            Password
+            <input type="password" name="password" autocomplete="new-password" required />
+          </label>
+          <p class="admin-login__error" data-login-error hidden>Invalid username or password.</p>
+          <button class="btn btn--primary" type="submit" data-admin-login-button>Open Dashboard</button>
+        </form>
+      </section>
+
+      <section class="admin-dashboard" data-dashboard>
+        <div class="container">
+          <div class="admin-dashboard__header">
+            <div>
+              <p class="eyebrow">Product Control</p>
+              <h1>Admin Dashboard</h1>
+              <p>Add new starter products, update existing products, or remove products from the live list.</p>
+            </div>
+            <div class="admin-actions">
+              <div class="admin-section-switch" role="group" aria-label="Admin dashboard section">
+                <button class="admin-section-btn is-active" type="button" data-admin-section-tab="products" aria-pressed="true">Add Product</button>
+                <button class="admin-section-btn" type="button" data-admin-section-tab="company-profile" aria-pressed="false">Company Profile</button>
+                <button class="admin-section-btn" type="button" data-admin-section-tab="billing" aria-pressed="false">Generate Bill</button>
+                <button class="admin-section-btn" type="button" data-admin-section-tab="quotation" aria-pressed="false">Estimate Quotation</button>
+              </div>
+              <a class="btn btn--light" href="index.html#top" aria-label="Go to website home page">Home</a>
+              <a class="btn btn--light" href="digital-motor-starters.html#starter-types">View Products</a>
+              <button class="admin-logout-btn" type="button" data-admin-logout onclick="window.adminLogoutFallback?.(event)">Logout</button>
+            </div>
+          </div>
+
+          <div class="admin-workspace" data-admin-section="products">
+            <form class="admin-product-form" data-product-form>
+              <input type="hidden" name="id" />
+              <h2 data-form-title>Add Product</h2>
+              <div class="admin-field-grid">
+                <label>
+                  Product Name
+                  <input type="text" name="name" required />
+                </label>
+                <label>
+                  Product Name Hindi
+                  <input type="text" name="nameHi" />
+                </label>
+                <label>
+                  Model / Product Code
+                  <input type="text" name="model" required />
+                </label>
+                <label>
+                  Product Type
+                  <select name="productType" required data-product-type>
+                    <option value="digital-motor-starters">Digital Motor Starters</option>
+                    <option value="smart-home-automation">Smart Home Automation</option>
+                    <option value="water-purifiers-softeners">Water Purifiers &amp; Softeners</option>
+                    <option value="security-surveillance">Security &amp; Surveillance</option>
+                  </select>
+                </label>
+                <label>
+                  Category
+                  <select name="category" required data-product-category></select>
+                </label>
+                <label>
+                  MRP
+                  <input type="number" name="mrp" min="0" required />
+                </label>
+                <label>
+                  Sale Price
+                  <input type="number" name="price" min="0" required />
+                </label>
+                <label>
+                  Product Unit
+                  <select name="unit" required>
+                    <option>Piece</option>
+                    <option>Set</option>
+                    <option>Kit</option>
+                    <option>Pair</option>
+                    <option>Meter</option>
+                    <option>Box</option>
+                  </select>
+                </label>
+                <label>
+                  Availability
+                  <select name="availability" required>
+                    <option>In Stock</option>
+                    <option>Out Of Stock</option>
+                  </select>
+                </label>
+                <label>
+                  Product Ranking Badge
+                  <select name="productBadge">
+                    <option value="">Standard Product</option>
+                    <option value="bestseller">Bestseller</option>
+                    <option value="top-rated">Top-Rated</option>
+                  </select>
+                </label>
+                <label class="admin-file-field">
+                  Upload Product Images
+                  <input type="file" name="imageFile" accept="image/png,image/jpeg,image/webp" multiple />
+                </label>
+                <input type="hidden" name="galleryImages" />
+                <input type="hidden" name="image" />
+              </div>
+              <div class="admin-image-preview" data-image-preview>
+                <span data-upload-status>No image selected</span>
+                <div class="admin-image-preview-list" data-image-preview-list></div>
+              </div>
+              <label>
+                Product Overview
+                <textarea name="overview" rows="4" required></textarea>
+              </label>
+              <label>
+                Product Overview Hindi
+                <textarea name="overviewHi" rows="4" placeholder="Hindi mode ke liye sahi anuvad yahan likhen"></textarea>
+              </label>
+              <label>
+                Technical Specification
+                <textarea name="technicalSpecs" rows="5" placeholder="Voltage: 230V&#10;Frequency: 50Hz&#10;Warranty: 1 Year"></textarea>
+              </label>
+              <label>
+                In the Box
+                <textarea name="inTheBox" rows="4" placeholder="One included item per line"></textarea>
+              </label>
+              <fieldset class="admin-checkbox-group">
+                <legend>Features</legend>
+                <label><input type="checkbox" name="features" value="Micro Controller Based" /> Micro Controller Based</label>
+                <label><input type="checkbox" name="features" value="Motor Protection Device" /> Motor Protection Device</label>
+                <label><input type="checkbox" name="features" value="Fully Customised According To Motor" /> Fully Customised According To Motor</label>
+                <label><input type="checkbox" name="features" value="Auto / Manual Button" /> Auto / Manual Button</label>
+                <label><input type="checkbox" name="features" value="Single Phase Protection" /> Single Phase Protection</label>
+                <label><input type="checkbox" name="features" value="Hi Voltage Protection" /> Hi Voltage Protection</label>
+                <label><input type="checkbox" name="features" value="Lo Voltage Protection" /> Lo Voltage Protection</label>
+                <label><input type="checkbox" name="features" value="Electronic Over Load Protection" /> Electronic Over Load Protection</label>
+                <label><input type="checkbox" name="features" value="Dry Run Protection" /> Dry Run Protection</label>
+                <label><input type="checkbox" name="features" value="Liquid Level Controller" /> Liquid Level Controller</label>
+                <label><input type="checkbox" name="features" value="For Under Ground / Overhead Tank" /> For Under Ground / Overhead Tank</label>
+                <label><input type="checkbox" name="features" value="Remote Enabled Device" /> Remote Enabled Device</label>
+                <label><input type="checkbox" name="features" value="Safe Device For Home/Agriculture Uses" /> Safe Device For Home/Agriculture Uses</label>
+                <label><input type="checkbox" name="features" value="Easy Installation" /> Easy Installation</label>
+                <label><input type="checkbox" name="features" value="Improve Motor Life" /> Improve Motor Life</label>
+                <label><input type="checkbox" name="features" value="1 Year Warranty" /> 1 Year Warranty</label>
+                <label><input type="checkbox" name="features" value="6 Month Warranty" /> 6 Month Warranty</label>
+                <label><input type="checkbox" name="features" value="3 Month Warranty" /> 3 Month Warranty</label>
+              </fieldset>
+              <label>
+                SOP Procedure
+                <textarea name="sopProcedure" rows="4" placeholder="One SOP step per line"></textarea>
+              </label>
+              <label>
+                SOP Procedure Hindi
+                <textarea name="sopProcedureHi" rows="4" placeholder="Hindi SOP, one step per line"></textarea>
+              </label>
+              <label>
+                Installation Instruction
+                <textarea name="installationInstruction" rows="4" placeholder="One installation step per line"></textarea>
+              </label>
+              <label>
+                Installation Instruction Hindi
+                <textarea name="installationInstructionHi" rows="4" placeholder="Hindi installation instruction, one step per line"></textarea>
+              </label>
+              <label class="admin-file-field">
+                Upload Wiring Diagram Images (Maximum 2)
+                <input type="file" name="wiringImageFile" accept="image/png,image/jpeg,image/webp" multiple />
+              </label>
+              <input type="hidden" name="wiringImage" />
+              <input type="hidden" name="wiringImages" />
+              <div class="admin-image-preview" data-wiring-preview>
+                <span data-wiring-upload-status>No wiring diagram selected</span>
+                <div class="admin-image-preview-list admin-wiring-preview-list" data-wiring-preview-list></div>
+              </div>
+              <fieldset class="admin-detail-image-group">
+                <legend>Product Detail Images</legend>
+                <p>Upload up to 3 reusable detail images. Tick the checkbox only when that image should show on the product details page.</p>
+                <article class="admin-detail-image-card">
+                  <label class="admin-detail-image-toggle"><input type="checkbox" name="showDisplayTable" checked /> Show Display Instruction Image</label>
+                  <label class="admin-file-field">
+                    Upload Display Instruction Image
+                    <input type="file" name="displayInstructionImageFile" accept="image/png,image/jpeg,image/webp" />
+                  </label>
+                  <input type="hidden" name="displayInstructionImage" />
+                  <div class="admin-image-preview-list admin-detail-image-preview" data-detail-image-preview="displayInstructions"></div>
+                </article>
+                <article class="admin-detail-image-card">
+                  <label class="admin-detail-image-toggle"><input type="checkbox" name="showSinglePhaseChart" checked /> Show Single-Phase Ampere Chart Image</label>
+                  <label class="admin-file-field">
+                    Upload Single-Phase Chart Image
+                    <input type="file" name="singlePhaseChartImageFile" accept="image/png,image/jpeg,image/webp" />
+                  </label>
+                  <input type="hidden" name="singlePhaseChartImage" />
+                  <div class="admin-image-preview-list admin-detail-image-preview" data-detail-image-preview="singlePhaseChart"></div>
+                </article>
+                <article class="admin-detail-image-card">
+                  <label class="admin-detail-image-toggle"><input type="checkbox" name="showThreePhaseChart" checked /> Show Three-Phase Chart Image</label>
+                  <label class="admin-file-field">
+                    Upload Three-Phase Chart Image
+                    <input type="file" name="threePhaseChartImageFile" accept="image/png,image/jpeg,image/webp" />
+                  </label>
+                  <input type="hidden" name="threePhaseChartImage" />
+                  <div class="admin-image-preview-list admin-detail-image-preview" data-detail-image-preview="threePhaseChart"></div>
+                </article>
+                <input type="hidden" name="displayInstructions" />
+              </fieldset>
+              <label>
+                Product Introduction Video Link
+                <input type="url" name="videoIntro" placeholder="https://..." />
+              </label>
+              <label>
+                Product Installation Video Link
+                <input type="url" name="videoInstallation" placeholder="https://..." />
+              </label>
+              <label>
+                SOP Training Video Link
+                <input type="url" name="videoSop" placeholder="https://..." />
+              </label>
+              <div class="admin-form-actions">
+                <button class="btn btn--primary" type="submit">Save Product</button>
+                <button class="btn btn--light" type="button" data-clear-form>Clear</button>
+              </div>
+            </form>
+
+            <div class="admin-product-list">
+              <div class="admin-product-list__top">
+                <h2>Existing Products</h2>
+                <span data-product-count>0 Products</span>
+              </div>
+              <label class="admin-product-search">
+                <span>Search Products</span>
+                <input type="search" placeholder="Search by product name, model, type or category" data-product-search />
+              </label>
+              <div data-admin-products></div>
+            </div>
+          </div>
+
+          <section class="admin-profile-panel" data-admin-section="company-profile" hidden>
+            <div class="admin-product-list__top">
+              <div>
+                <p class="eyebrow">Business Information</p>
+                <h2>Company Profile</h2>
+              </div>
+              <span data-company-profile-status>Ready</span>
+            </div>
+            <p class="admin-profile-intro">Update public contact information, leadership details and social links from one place.</p>
+            <form class="admin-profile-form" data-company-profile-form novalidate>
+              <fieldset>
+                <legend>Company & Leadership</legend>
+                <div class="admin-field-grid">
+                  <label>Company Name<input type="text" name="companyName" required /></label>
+                  <label>CEO / Founder Name<input type="text" name="ceoName" required /></label>
+                  <label>CEO Designation<input type="text" name="ceoTitle" placeholder="Founder & CEO" /></label>
+                  <label>Founded Year<input type="number" name="foundedYear" min="1900" max="2100" /></label>
+                  <label>Years of Excellence<input type="number" name="yearsExcellence" min="0" /></label>
+                  <label>Happy Customers<input type="number" name="happyCustomers" min="0" /></label>
+                  <label>Products Installed<input type="number" name="productsInstalled" min="0" /></label>
+                </div>
+                <label>Company Tagline<input type="text" name="tagline" /></label>
+                <label>Company Description<textarea name="description" rows="4"></textarea></label>
+              </fieldset>
+
+              <fieldset>
+                <legend>Address & Contact</legend>
+                <label>Full Address<textarea name="address" rows="3" required></textarea></label>
+                <div class="admin-field-grid">
+                  <label>City<input type="text" name="city" /></label>
+                  <label>District<input type="text" name="district" /></label>
+                  <label>State<input type="text" name="state" /></label>
+                  <label>PIN Code<input type="text" name="pincode" inputmode="numeric" maxlength="6" /></label>
+                  <label>Country<input type="text" name="country" /></label>
+                  <label>Primary Mobile<input type="tel" name="phone" required /></label>
+                  <label>Alternate Mobile<input type="tel" name="alternatePhone" /></label>
+                  <label>WhatsApp Number<input type="tel" name="whatsapp" /></label>
+                  <label>Primary Email<input type="email" name="email" required /></label>
+                  <label>Support Email<input type="email" name="supportEmail" /></label>
+                  <label>Website URL<input type="url" name="website" placeholder="https://..." /></label>
+                  <label>Business Hours<input type="text" name="businessHours" /></label>
+                  <label>GSTIN<input type="text" name="gstin" placeholder="Optional" /></label>
+                  <label>Google Maps Link<input type="url" name="googleMaps" placeholder="https://maps.google.com/..." /></label>
+                  <label>Product Catalogue PDF Path<input type="text" name="productCataloguePdf" placeholder="assets/catalogues/product-catalogue.pdf" /></label>
+                  <input type="hidden" name="serviceLocations" />
+                  <label class="admin-file-field">
+                    Upload Product Catalogue PDF
+                    <input type="file" name="productCataloguePdfFile" accept="application/pdf,.pdf" />
+                  </label>
+                  <label>Coverage Map Image Path<input type="text" name="coverageMapImage" placeholder="assets/maps/india-professional-map.jpg" /></label>
+                  <label class="admin-file-field">
+                    Upload Coverage Map Image
+                    <input type="file" name="coverageMapImageFile" accept="image/png,image/jpeg,image/webp" />
+                  </label>
+                </div>
+                <div class="admin-image-preview" data-catalogue-preview>
+                  <span data-catalogue-status>No product catalogue selected</span>
+                  <div class="admin-image-preview-list" data-catalogue-preview-list></div>
+                </div>
+                <div class="admin-image-preview" data-coverage-map-preview>
+                  <span data-coverage-map-status>No coverage map image selected</span>
+                  <div class="admin-image-preview-list" data-coverage-map-preview-list></div>
+                </div>
+              </fieldset>
+
+              <fieldset>
+                <legend>Social Media</legend>
+                <div class="admin-field-grid">
+                  <label>Facebook Link<input type="url" name="facebook" placeholder="https://facebook.com/..." /></label>
+                  <label>Instagram Link<input type="url" name="instagram" placeholder="https://instagram.com/..." /></label>
+                  <label>YouTube Link<input type="url" name="youtube" placeholder="https://youtube.com/..." /></label>
+                  <label>LinkedIn Link<input type="url" name="linkedin" placeholder="https://linkedin.com/..." /></label>
+                </div>
+              </fieldset>
+
+              <fieldset>
+                <legend>Homepage Product Categories</legend>
+                <p class="admin-editor-help">Edit the category/filter name, card content, image path and destination link. Disabled rows stay saved but are hidden from the website.</p>
+                <div class="admin-repeater" data-website-category-rows></div>
+                <button class="btn btn--light admin-add-row-btn" type="button" data-add-website-category>Add Product Category</button>
+              </fieldset>
+
+              <fieldset>
+                <legend>Industries We Serve</legend>
+                <p class="admin-editor-help">Add, edit, reorder, hide or remove industry buttons and their website messages.</p>
+                <div class="admin-repeater" data-industry-editor-rows></div>
+                <button class="btn btn--light admin-add-row-btn" type="button" data-add-industry>Add Industry</button>
+              </fieldset>
+
+              <div class="admin-form-actions">
+                <button class="btn btn--primary" type="button" data-save-company-profile>Save Company Profile</button>
+                <button class="btn btn--light" type="button" data-reload-company-profile>Reload Saved Details</button>
+              </div>
+            </form>
+          </section>
+
+          <section class="admin-bill-panel" data-bill-panel data-admin-section="billing" hidden>
+            <div class="admin-product-list__top">
+              <h2>Generate Bill</h2>
+              <span data-bill-status>Ready</span>
+            </div>
+
+            <form class="admin-bill-form" data-bill-form>
+              <div class="admin-field-grid">
+                <label>
+                  Bill Number
+                  <input type="text" name="billNumber" data-bill-number readonly />
+                </label>
+                <label>
+                  Billing Date
+                  <input type="date" name="billingDate" required />
+                </label>
+                <label>
+                  Customer Name
+                  <input type="text" name="customerName" required />
+                </label>
+                <label>
+                  Customer Mobile
+                  <input type="tel" name="customerPhone" inputmode="numeric" maxlength="10" />
+                </label>
+                <label>
+                  Customer GST Number
+                  <input type="text" name="customerGst" placeholder="Optional" />
+                </label>
+                <label>
+                  GST Option
+                  <select name="gstMode">
+                    <option value="without">Without GST</option>
+                    <option value="with">With GST 18%</option>
+                  </select>
+                </label>
+              </div>
+
+              <label>
+                Customer Address
+                <textarea name="customerAddress" rows="3" required></textarea>
+              </label>
+
+              <div class="bill-product-picker">
+                <label>
+                  Product Type
+                  <select name="billProductType" data-bill-product-type></select>
+                </label>
+                <label>
+                  Category
+                  <select name="billCategory" data-bill-category></select>
+                </label>
+                <label>
+                  Model Number
+                  <select name="billProduct" data-bill-product></select>
+                </label>
+                <label>
+                  Qty
+                  <input type="number" name="billQty" min="1" value="1" />
+                </label>
+                <label>
+                  Rate
+                  <input type="number" name="billRate" min="0" />
+                </label>
+                <button class="btn btn--primary" type="button" data-add-bill-item>Add Product</button>
+              </div>
+
+              <div class="bill-items" data-bill-items></div>
+
+              <div class="admin-field-grid">
+                <label>
+                  Discount
+                  <input type="number" name="discount" min="0" value="0" />
+                </label>
+                <label>
+                  Paid Amount
+                  <input type="number" name="paidAmount" min="0" value="0" />
+                </label>
+                <label>
+                  Bill Paid Date
+                  <input type="date" name="paidDate" />
+                </label>
+                <label>
+                  Remarks
+                  <input type="text" name="remarks" placeholder="Payment mode, transport, warranty, etc." />
+                </label>
+              </div>
+
+              <div class="bill-total-card" data-bill-totals></div>
+
+              <div class="admin-form-actions">
+                <button class="btn btn--primary" type="button" data-generate-bill-pdf>Generate PDF / Print</button>
+                <button class="btn btn--light" type="button" data-share-bill-whatsapp>Share On WhatsApp</button>
+                <button class="btn btn--light" type="button" data-clear-bill>Clear Bill</button>
+              </div>
+            </form>
+          </section>
+
+          <section class="admin-bill-panel" data-admin-section="quotation" hidden>
+            <div class="admin-product-list__top">
+              <h2>Estimate Quotation</h2>
+              <span data-quote-status>Ready</span>
+            </div>
+
+            <form class="admin-bill-form" data-quote-form>
+              <div class="admin-field-grid">
+                <label>
+                  Quotation Number
+                  <input type="text" name="quoteNumber" readonly />
+                </label>
+                <label>
+                  Quotation Date
+                  <input type="date" name="quoteDate" required />
+                </label>
+                <label>
+                  Dealer Name
+                  <input type="text" name="dealerName" required />
+                </label>
+                <label>
+                  Dealer Mobile
+                  <input type="tel" name="dealerPhone" inputmode="numeric" maxlength="10" />
+                </label>
+              </div>
+
+              <label>
+                Dealer Address
+                <textarea name="dealerAddress" rows="3" required></textarea>
+              </label>
+
+              <div class="bill-product-picker quote-product-picker">
+                <label>
+                  Product Type
+                  <select name="quoteProductType" data-quote-product-type></select>
+                </label>
+                <label>
+                  Category
+                  <select name="quoteCategory" data-quote-category></select>
+                </label>
+                <label>
+                  Model Number
+                  <select name="quoteProduct" data-quote-product></select>
+                </label>
+                <label>
+                  Qty
+                  <input type="number" name="quoteQty" min="1" value="1" />
+                </label>
+                <label>
+                  MRP Price
+                  <input type="number" name="quoteMrp" min="0" />
+                </label>
+                <label>
+                  Wholesale Price
+                  <input type="number" name="quoteWholesaleRate" min="0" />
+                </label>
+                <button class="btn btn--primary" type="button" data-add-quote-item>Add Item</button>
+              </div>
+
+              <div class="bill-items" data-quote-items></div>
+              <div class="bill-total-card" data-quote-totals></div>
+
+              <div class="admin-form-actions">
+                <button class="btn btn--primary" type="button" data-generate-quote-pdf>Generate Quotation PDF / Print</button>
+                <button class="btn btn--light" type="button" data-share-quote-whatsapp>Share To Dealer WhatsApp</button>
+                <button class="btn btn--light" type="button" data-clear-quote>Clear Quotation</button>
+              </div>
+            </form>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      window.adminLogoutFallback = (event) => {
+        event?.preventDefault();
+        localStorage.removeItem("paramAutomationAdminSession");
+        window.location.assign("index.html#top");
+      };
+    </script>
+    <script src="company-profile-data.js?v=20260630-05"></script>
+    <script src="starter-products-data.js?v=20260628-02"></script>
+    <script src="company-profile.js?v=20260630-02"></script>
+    <script src="starter-products.js?v=20260701-01"></script>
+    <script src="admin-dashboard.js?v=20260630-02"></script>
+    <script src="script.js?v=20260701-01"></script>
+  </body>
+</html>

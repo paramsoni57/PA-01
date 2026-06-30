@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Param Automation | Smart Solutions</title>
+    <meta
+      name="description"
+      content="Param Automation smart solutions for homes, agriculture, industries, water purification, security, and automation."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  <link rel="stylesheet" href="styles.css?v=20260701-01" />
+  </head>
+  <body>
+    <span id="top" class="page-top" aria-hidden="true"></span>
+    <div class="topbar">
+      <div class="container topbar__inner">
+        <a class="topbar__admin-link active" href="admin-login.html?fresh=admin" data-i18n="topbar.tagline">Admin Dashboard</a>
+        <div class="topbar__links">
+          <a href="https://www.facebook.com/share/18fMQMRASi/" target="_blank" rel="noopener" aria-label="Facebook">f</a>
+          <a href="https://www.instagram.com/param_automation?igsh=MjFqNWtpcG8yeGMz" target="_blank" rel="noopener" aria-label="Instagram">◎</a>
+          <a class="call-icon" href="tel:+918109521547" aria-label="Call Param Automation" title="Call Param Automation">&#9742;</a>
+          <button class="site-exit-button" type="button" data-site-exit aria-label="Exit website" title="Exit website">×</button>
+        </div>
+      </div>
+    </div>
+
+    <header class="site-header">
+      <div class="container nav">
+        <a class="brand" href="#top" aria-label="Param Automation home">
+          <img src="assets/brand/logo.jpg" alt="Param Automation" />
+        </a>
+        <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="nav-menu" aria-label="Primary navigation">
+          <a class="active" href="#top" data-i18n="nav.home">Home</a>
+          <a href="about.html" data-i18n="nav.about">About Us</a>
+          <a href="#products" data-i18n="nav.products">Products</a>
+          <a href="#generate-bill" data-open-public-bill data-i18n="nav.bill">Generate Bill</a>
+          <a href="contact.html" data-i18n="nav.contact">Contact Us</a>
+          <label class="language-toggle" aria-label="Switch language">
+            <input type="checkbox" data-language-select />
+            <span class="language-toggle__track">
+              <span>EN</span>
+              <span>HI</span>
+            </span>
+          </label>
+          <button class="quote-btn" type="button" data-open-modal data-i18n="nav.quote">Get A Quote</button>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" aria-label="Smart automation solutions">
+        <div class="hero__frame">
+          <img
+            class="hero__image"
+            src="assets/banners/index-hero-clean-20260613.jpg"
+            alt="Smart solutions for every home, agriculture and industry by Param Automation"
+          />
+          <div class="hero__overlay">
+            <h1>
+              <span data-i18n="hero.title">Smart Solutions</span>
+              <small data-i18n="hero.subtitle">For Every Home, Agriculture &amp; Industry</small>
+            </h1>
+            <p data-i18n="hero.text">Intelligent automation products that improve efficiency, save energy, enhance safety and simplify everyday operations.</p>
+            <div class="hero__actions" aria-label="Hero actions">
+              <a class="btn btn--primary" href="#products"><span data-i18n="hero.products">Explore Products</span> <span aria-hidden="true">→</span></a>
+              <a class="btn btn--light" href="contact.html" data-i18n="hero.contact">Contact Us</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="feature-strip" aria-label="Company strengths">
+        <div class="container feature-grid">
+          <article>
+            <span>♢</span>
+            <strong data-i18n="features.innovative">Innovative Technology</strong>
+          </article>
+          <article>
+            <span>♧</span>
+            <strong data-i18n="features.energy">Energy Efficient</strong>
+          </article>
+          <article>
+            <span>▣</span>
+            <strong data-i18n="features.reliable">Reliable Products</strong>
+          </article>
+          <article>
+            <span>☎</span>
+            <strong data-i18n="features.support">Expert Technical Support</strong>
+          </article>
+          <article>
+            <span>⚙</span>
+            <strong data-i18n="features.custom">Customized Solutions</strong>
+          </article>
+          <article>
+            <span>☷</span>
+            <strong data-company-happy-customers-summary>1000+ Happy Customers</strong>
+          </article>
+        </div>
+      </section>
+
+      <section class="section products" id="products">
+        <div class="container">
+          <div class="section-title">
+            <p data-i18n="products.title">Our Products</p>
+            <h2 data-i18n="products.subtitle">Solutions Built For Daily Work</h2>
+          </div>
+
+          <div class="product-controls" aria-label="Product categories">
+            <button class="is-active" type="button" data-filter="all" data-i18n="filters.all">All</button>
+            <button type="button" data-filter="industry" data-i18n="filters.industry">Industry</button>
+            <button type="button" data-filter="home" data-i18n="filters.home">Home</button>
+            <button type="button" data-filter="water" data-i18n="filters.water">Water</button>
+            <button type="button" data-filter="security" data-i18n="filters.security">Security</button>
+          </div>
+
+          <div class="product-shell">
+            <button class="slider-arrow slider-arrow--left" type="button" aria-label="Previous products">‹</button>
+            <div class="product-track" tabindex="0">
+              <article class="product-card" data-category="industry">
+                <img src="assets/products/categories/digital-motor-starter.jpg" alt="Digital motor starter" />
+                <div>
+                  <h3 data-i18n="product.starter.title">Digital Motor Starters</h3>
+                  <p data-i18n="product.starter.text">Advanced protection for motors with smart features and automatic control.</p>
+                  <a href="digital-motor-starters.html">View More <span>→</span></a>
+                </div>
+              </article>
+              <article class="product-card" data-category="home">
+                <img src="assets/products/categories/home-automation.jpg" alt="Smart home automation" />
+                <div>
+                  <h3 data-i18n="product.home.title">Smart Home Automation</h3>
+                  <p data-i18n="product.home.text">Automate lighting, switches, security and energy monitoring from one system.</p>
+                  <a href="contact.html">View More <span>→</span></a>
+                </div>
+              </article>
+              <article class="product-card" data-category="water">
+                <img src="assets/products/categories/water-purifier.jpg" alt="Water purifier systems" />
+                <div>
+                  <h3 data-i18n="product.water.title">Water Purifiers & Softeners</h3>
+                  <p data-i18n="product.water.text">Pure and soft water solutions for homes, industries and commercial spaces.</p>
+                  <a href="contact.html">View More <span>→</span></a>
+                </div>
+              </article>
+              <article class="product-card" data-category="security">
+                <img src="assets/products/categories/security-camera.jpg" alt="Security camera" />
+                <div>
+                  <h3 data-i18n="product.security.title">Security & Surveillance</h3>
+                  <p data-i18n="product.security.text">Advanced CCTV and security systems for remote monitoring and safety.</p>
+                  <a href="contact.html">View More <span>→</span></a>
+                </div>
+              </article>
+            </div>
+            <button class="slider-arrow slider-arrow--right" type="button" aria-label="Next products">›</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="section industries" id="services">
+        <div class="container industries__grid">
+          <div>
+            <div class="section-title section-title--left">
+              <p data-i18n="industries.title">Industries We Serve</p>
+              <h2 data-i18n="industries.subtitle">Automation For Homes, Farms And Facilities</h2>
+            </div>
+            <div class="industry-list">
+              <button type="button" data-industry="Smart Homes">⌂<span>Smart Homes</span></button>
+              <button type="button" data-industry="Agriculture & Irrigation">♧<span>Agriculture & Irrigation</span></button>
+              <button type="button" data-industry="Manufacturing Industries">▤<span>Manufacturing Industries</span></button>
+              <button type="button" data-industry="Commercial Buildings">▥<span>Commercial Buildings</span></button>
+              <button type="button" data-industry="Schools & Institutions">♜<span>Schools & Institutions</span></button>
+              <button type="button" data-industry="Hospitals">✚<span>Hospitals</span></button>
+            </div>
+            <p class="industry-note" id="industry-note">
+              <span data-i18n="industry.note">Select an industry to see how Param Automation can tailor a solution.</span>
+            </p>
+          </div>
+
+          <div class="stats-panel" id="about">
+            <article>
+              <strong data-count="5" data-company-years-excellence>0</strong>
+              <span data-i18n="stats.years">Years of Excellence</span>
+            </article>
+            <article>
+              <strong data-count="1000" data-company-happy-customers>0</strong>
+              <span data-i18n="stats.customers">Happy Customers</span>
+            </article>
+            <article>
+              <strong data-count="5000" data-company-products-installed>0</strong>
+              <span data-i18n="stats.installed">Products Installed</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta" id="gallery">
+        <div class="container cta__inner">
+          <div>
+            <h2 data-i18n="cta.title">Ready to Automate Your World?</h2>
+            <p data-i18n="cta.text">Let’s build a smarter, safer and more efficient tomorrow together.</p>
+          </div>
+          <a class="btn btn--light" href="tel:+918109521547"><span data-i18n="cta.button">Get A Free Consultation</span> <span>→</span></a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer" id="contact">
+      <div class="container footer__grid">
+        <div>
+          <img class="footer__logo" src="assets/brand/footer-logo-white.png" alt="Param Automation" />
+          <p>
+            <span data-i18n="footer.about">We provide innovative automation solutions for homes, agriculture and industries
+            with the perfect blend of technology and reliability.</span>
+          </p>
+          <div class="socials" aria-label="Social links">
+            <a href="https://www.facebook.com/share/18fMQMRASi/" target="_blank" rel="noopener" aria-label="Facebook">f</a>
+            <a href="https://www.instagram.com/param_automation?igsh=MjFqNWtpcG8yeGMz" target="_blank" rel="noopener" aria-label="Instagram">◎</a>
+            <a class="call-icon" href="tel:+918109521547" aria-label="Call Param Automation" title="Call Param Automation">&#9742;</a>
+          </div>
+        </div>
+        <div>
+          <h3 data-i18n="footer.quickLinks">Quick Links</h3>
+          <a href="#top">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="#products">Products</a>
+          <a href="#gallery">Gallery</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+        <div>
+          <h3 data-i18n="footer.products">Products</h3>
+          <a href="#products">Digital Motor Starters</a>
+          <a href="#products">Home Automation</a>
+          <a href="#products">Water Purifiers</a>
+          <a href="#products">Water Softeners</a>
+          <a href="#products">Security Systems</a>
+          <a href="#products">Accessories</a>
+        </div>
+        <div>
+          <h3 data-i18n="footer.contact">Contact Us</h3>
+          <p>Jhanda Chowk, Gadarwara, Dist:- Narsinghpur Madhya Pradesh, India Pin Code - 487551</p>
+          <a href="tel:+918109521547">+91 8109521547</a>
+          <a href="mailto:Paramsoni57@gmail.com">Paramsoni57@gmail.com</a>
+        </div>
+        <img class="map" src="assets/maps/location-map.jpg" alt="Param Automation map location" />
+      </div>
+      <div class="container footer__bottom">
+        <p>© 2026 Param Automation. All Rights Reserved.</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a></p>
+      </div>
+    </footer>
+
+    <dialog class="quote-modal" aria-labelledby="quote-title">
+      <form method="dialog">
+        <button class="modal-close" type="button" aria-label="Close" data-close-quote>×</button>
+        <h2 id="quote-title" data-i18n="modal.title">Get A Quote</h2>
+        <p data-i18n="modal.text">Share your requirement and we’ll prepare the right automation solution.</p>
+        <label>
+          Name
+          <input type="text" name="name" placeholder="Your name" required />
+        </label>
+        <label>
+          Phone
+          <input type="tel" name="phone" placeholder="+91" required />
+        </label>
+        <label>
+          Requirement
+          <select name="requirement">
+            <option>Digital Motor Starter</option>
+            <option>Home Automation</option>
+            <option>Water Purifier / Softener</option>
+            <option>Security & Surveillance</option>
+            <option>Custom Automation</option>
+          </select>
+        </label>
+        <label>
+          Message
+          <textarea name="message" rows="4" placeholder="Tell us what you need"></textarea>
+        </label>
+        <button class="btn btn--primary" type="submit">Send Request</button>
+      </form>
+    </dialog>
+
+    <dialog class="quote-modal public-bill-modal" aria-labelledby="public-bill-title" data-public-bill-dialog>
+      <div class="public-bill-dialog">
+        <button class="modal-close" type="button" aria-label="Close" data-close-public-bill>&times;</button>
+        <div class="admin-product-list__top">
+          <h2 id="public-bill-title">Generate Bill</h2>
+          <span data-public-bill-status>Enter password</span>
+        </div>
+
+        <form class="public-bill-lock" data-public-bill-lock>
+          <label>
+            Bill Password
+            <input type="password" name="billPassword" autocomplete="current-password" required />
+          </label>
+          <button class="btn btn--primary" type="submit">Unlock Bill Form</button>
+        </form>
+
+        <div class="admin-section-switch public-document-switch" data-public-document-switch hidden>
+          <button class="admin-section-btn is-active" type="button" data-public-document-mode="bill" aria-pressed="true">Generate Bill</button>
+          <button class="admin-section-btn" type="button" data-public-document-mode="estimate" aria-pressed="false">Estimate Quotation</button>
+        </div>
+
+        <form class="admin-bill-form public-bill-form" data-public-bill-form hidden>
+          <div class="admin-field-grid">
+            <label>
+              Bill Number
+              <input type="text" name="billNumber" readonly />
+            </label>
+            <label>
+              Billing Date
+              <input type="date" name="billingDate" required />
+            </label>
+            <label>
+              Customer Name
+              <input type="text" name="customerName" required />
+            </label>
+            <label>
+              Customer Mobile
+              <input type="tel" name="customerPhone" inputmode="numeric" maxlength="10" pattern="[0-9]{10}" required />
+            </label>
+            <label>
+              Customer GSTIN
+              <input type="text" name="customerGst" />
+            </label>
+            <label>
+              GST Option
+              <select name="gstMode">
+                <option value="without">Without GST</option>
+                <option value="with">With GST 18%</option>
+              </select>
+            </label>
+          </div>
+
+          <fieldset class="admin-display-table-field public-address-field">
+            <strong>Customer Address</strong>
+            <div class="admin-field-grid">
+              <label>
+                State
+                <select name="customerState" required data-public-state></select>
+              </label>
+              <label>
+                District
+                <select name="customerDistrict" required data-public-district></select>
+              </label>
+              <label>
+                City / Town
+                <input type="text" name="customerCity" required />
+              </label>
+              <label>
+                Pincode
+                <input type="text" name="customerPincode" inputmode="numeric" maxlength="6" pattern="[0-9]{6}" required />
+              </label>
+            </div>
+            <label>
+              Local Address
+              <textarea name="customerLocalAddress" rows="3" required></textarea>
+            </label>
+          </fieldset>
+
+          <div class="bill-product-picker public-bill-picker">
+            <label>
+              Product Type
+              <select name="billProductType" data-public-bill-product-type></select>
+            </label>
+            <label>
+              Category
+              <select name="billCategory" data-public-bill-category></select>
+            </label>
+            <label>
+              Model Number
+              <select name="billProduct" data-public-bill-product></select>
+            </label>
+            <label>
+              Qty
+              <input type="number" name="billQty" min="1" value="1" />
+            </label>
+            <label>
+              Rate
+              <input type="number" name="billRate" min="0" />
+            </label>
+            <button class="btn btn--primary" type="button" data-public-add-bill-item>Add Product</button>
+          </div>
+
+          <div class="bill-items" data-public-bill-items></div>
+
+          <div class="admin-field-grid">
+            <label>
+              Discount
+              <input type="number" name="discount" min="0" value="0" />
+            </label>
+            <label>
+              Paid Amount
+              <input type="number" name="paidAmount" min="0" value="0" />
+            </label>
+            <label>
+              Bill Paid Date
+              <input type="date" name="paidDate" />
+            </label>
+            <label>
+              Remarks
+              <input type="text" name="remarks" placeholder="Transport, installation, payment note etc." />
+            </label>
+          </div>
+
+          <div class="bill-total-card" data-public-bill-totals></div>
+
+          <div class="admin-form-actions">
+            <button class="btn btn--primary" type="button" data-public-generate-bill-pdf>Generate PDF / Print</button>
+            <button class="btn btn--light" type="button" data-public-generate-shipping-label>Print Shipping Label</button>
+            <button class="btn btn--light" type="button" data-public-share-bill-whatsapp>Share Bill Details On WhatsApp</button>
+            <button class="btn btn--light" type="button" data-public-clear-bill>Clear Bill</button>
+          </div>
+        </form>
+
+        <form class="admin-bill-form public-bill-form" data-public-estimate-form hidden>
+          <div class="admin-field-grid">
+            <label>Quotation Number<input type="text" name="quoteNumber" readonly /></label>
+            <label>Quotation Date<input type="date" name="quoteDate" required /></label>
+            <label>Dealer Name<input type="text" name="dealerName" required /></label>
+            <label>Dealer Mobile<input type="tel" name="dealerPhone" inputmode="numeric" maxlength="10" /></label>
+          </div>
+
+          <label>Dealer Address<textarea name="dealerAddress" rows="3" required></textarea></label>
+
+          <div class="bill-product-picker public-estimate-picker">
+            <label>Product Type<select name="quoteProductType" data-public-quote-product-type></select></label>
+            <label>Category<select name="quoteCategory" data-public-quote-category></select></label>
+            <label>Model Number<select name="quoteProduct" data-public-quote-product></select></label>
+            <label>Qty<input type="number" name="quoteQty" min="1" value="1" /></label>
+            <label>MRP Price<input type="number" name="quoteMrp" min="0" /></label>
+            <label>Wholesale Price<input type="number" name="quoteWholesaleRate" min="0" /></label>
+            <button class="btn btn--primary" type="button" data-public-add-quote-item>Add Item</button>
+          </div>
+
+          <div class="bill-items" data-public-quote-items></div>
+          <div class="bill-total-card" data-public-quote-totals></div>
+
+          <div class="admin-form-actions">
+            <button class="btn btn--primary" type="button" data-public-generate-quote-pdf>Generate Estimate PDF / Print</button>
+            <button class="btn btn--light" type="button" data-public-share-quote-whatsapp>Share To Dealer WhatsApp</button>
+            <button class="btn btn--light" type="button" data-public-clear-quote>Clear Estimate</button>
+          </div>
+        </form>
+      </div>
+    </dialog>
+
+    <script src="company-profile-data.js?v=20260630-05"></script>
+    <script src="starter-products-data.js?v=20260628-02"></script>
+    <script src="image-bundle.js?v=20260628-02"></script>
+    <script src="company-profile.js?v=20260630-02"></script>
+    <script src="public-bill.js?v=20260628-02"></script>
+    <script src="script.js?v=20260701-01"></script>
+  </body>
+</html>
